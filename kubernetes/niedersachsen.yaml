@@ -3,22 +3,75 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: niedersachsen-maintenance
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: "niedersachsen.cloud"
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: maintenance
-          servicePort: 8080
-  - host: "*.niedersachsen.cloud"
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: maintenance
-          servicePort: 8080
+    - host: niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: api.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: content.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: editor.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: edtrio.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: etherpad.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: oauth.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: chat.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: dashboard.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
+    - host: libreoffice.niedersachsen.cloud
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: maintenance
+            servicePort: 8080
