@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: maintenance
-        image: schulcloud/maintenance-site:1.0.0
+        image: schulcloud/maintenance-site:master_v1.0.0_e93d629cb6f5e535687678292b572ca3bc640264
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
