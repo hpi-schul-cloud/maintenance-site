@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: niedersachsen-maintenance
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: "niedersachsen.cloud"
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: maintenance
+          servicePort: 8080
+  - host: "*.niedersachsen.cloud"
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: maintenance
+          servicePort: 8080
